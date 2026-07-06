@@ -1,0 +1,6 @@
+board:
+  name: openfarm_f407vet6
+  full_name: OpenFarm STM32F407VET6
+  vendor: openfarm
+  socs:
+    - name: stm32f407xx

@@ -1,0 +1,34 @@
+/dts-v1/;
+#include <st/f4/stm32f407Xe.dtsi>
+
+/ {
+	model = "OpenFarm STM32F407VET6";
+	compatible = "openfarm,stm32f407vet6";
+
+	chosen {
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+	};
+};
+
+&clk_hse {
+	clock-frequency = <8000000>;
+	status = "okay";
+};
+
+&pll {
+	clocks = <&clk_hse>;
+	div-m = <8>;
+	mul-n = <336>;
+	div-p = <2>;
+	div-q = <7>;
+	status = "okay";
+};
+
+&rcc {
+	clocks = <&pll>;
+	clock-frequency = <168000000>;
+	ahb-prescaler = <1>;
+	apb1-prescaler = <4>;
+	apb2-prescaler = <2>;
+};

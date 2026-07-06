@@ -1,0 +1,6 @@
+if BOARD_OPENFARM_F407VET6
+
+config BOARD
+	default "openfarm_f407vet6"
+
+endif

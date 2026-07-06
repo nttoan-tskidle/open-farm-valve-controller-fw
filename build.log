@@ -1,0 +1,32 @@
+-- west build: making build dir /home/nttoantskidle/project/open-farm-foundation/firmware/solenoid-valve-controller/build pristine
+-- west build: generating a build system
+Loading Zephyr default modules (Zephyr base).
+-- Application: /home/nttoantskidle/project/open-farm-foundation/firmware/solenoid-valve-controller/app
+-- CMake version: 4.2.3
+-- Found Python3: /opt/zephyrproject/.venv/bin/python3 (found suitable version "3.14.4", minimum required is "3.12") found components: Interpreter
+-- Cache files will be written to: /home/nttoantskidle/.cache/zephyr
+-- Zephyr version: 4.4.99 (/opt/zephyrproject/zephyr)
+-- Found west (found suitable version "1.5.0", minimum required is "0.14.0")
+-- Board: openfarm_f407vet6, qualifiers: stm32f407xx
+-- ZEPHYR_TOOLCHAIN_VARIANT not set, trying to locate Zephyr SDK
+-- Found host-tools: zephyr 1.0.1 (/home/nttoantskidle/zephyr-sdk-1.0.1)
+-- Found toolchain: zephyr 1.0.1 (/home/nttoantskidle/zephyr-sdk-1.0.1)
+-- Found Dtc: /home/nttoantskidle/zephyr-sdk-1.0.1/hosttools/sysroots/x86_64-pokysdk-linux/usr/bin/dtc (found suitable version "1.7.0", minimum required is "1.4.6")
+-- Found BOARD.dts: /home/nttoantskidle/project/open-farm-foundation/firmware/solenoid-valve-controller/app/boards/arm/openfarm_f407vet6/openfarm_f407vet6.dts
+devicetree error: 'clocks' is marked as required in 'properties:' in '/opt/zephyrproject/zephyr/dts/bindings/clock/st,stm32fx-pll-clock.yaml', but does not appear in <Node /clocks/pll in /opt/zephyrproject/zephyr/dts/arm/st/f4/stm32f4.dtsi:90>
+CMake Error at /opt/zephyrproject/zephyr/cmake/modules/dts.cmake:326 (execute_process):
+  execute_process failed command indexes:
+
+    1: "Child return code: 1"
+
+Call Stack (most recent call first):
+  /opt/zephyrproject/zephyr/cmake/modules/dts.cmake:446 (dts_edt_pickle)
+  /opt/zephyrproject/zephyr/cmake/modules/zephyr_default.cmake:132 (dts_init)
+  /opt/zephyrproject/zephyr/cmake/modules/zephyr_default.cmake:132 (cmake_language)
+  /opt/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)
+  /opt/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)
+  CMakeLists.txt:3 (find_package)
+
+
+-- Configuring incomplete, errors occurred!
+FATAL ERROR: command exited with status 1: /usr/bin/cmake -DWEST_PYTHON=/opt/zephyrproject/.venv/bin/python3 -DWEST_TOPDIR=/opt/zephyrproject -DWEST_VERSION=1.5.0 -B/home/nttoantskidle/project/open-farm-foundation/firmware/solenoid-valve-controller/build -GNinja '-DWEST_PYTHON_PROPERTIES="Python;3;14;4;64;;cpython-314-x86_64-linux-gnu.so;abi3;/usr/lib/python3.14;/opt/zephyrproject/.venv/lib/python3.14;/opt/zephyrproject/.venv/lib/python3.14/site-packages;/opt/zephyrproject/.venv/lib/python3.14/site-packages"' -DBOARD=openfarm_f407vet6 -DBOARD_ROOT=/home/nttoantskidle/project/open-farm-foundation/firmware/solenoid-valve-controller/app -S/home/nttoantskidle/project/open-farm-foundation/firmware/solenoid-valve-controller/app
