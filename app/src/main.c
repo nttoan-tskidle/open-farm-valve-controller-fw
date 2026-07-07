@@ -1,22 +1,28 @@
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
 
-#include "bsp/board/board.h"
+#include "services/system/system_service.h"
 
 LOG_MODULE_REGISTER(main, LOG_LEVEL_INF);
 
 int main(void)
 {
-    int ret = board_init();
-    if (ret < 0) {
-        LOG_ERR("Board init failed: %d", ret);
+    LOG_INF("==================================");
+    LOG_INF("Open Farm Foundation");
+    LOG_INF("Firmware boot");
+    LOG_INF("Board: %s", CONFIG_BOARD);
+    LOG_INF("==================================");
+
+    int ret = system_service_start();
+
+    if (ret != 0) {
+        LOG_ERR("System failed to start: %d", ret);
         return ret;
     }
 
-    LOG_INF("Open Farm valve controller started");
+    LOG_INF("Application is running");
 
     while (1) {
-        LOG_INF("System heartbeat");
         k_sleep(K_SECONDS(1));
     }
 
